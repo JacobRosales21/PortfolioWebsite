@@ -211,7 +211,7 @@ textarea {
 }
 
 .text-primary {
-  color: #fff;
+  color: #0e0d0d;
   font-size: 2.2rem;
   text-align: center;
   width: 100%;
@@ -228,7 +228,7 @@ textarea {
 }
 
 .home-hero {
-  color: #fff;
+  color: #161616;
   position: relative;
   height: 100vh;
   min-height: 80rem;

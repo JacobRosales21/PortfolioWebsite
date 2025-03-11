@@ -1,409 +1,64 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Best Portfolio</title>
-    <meta name="description" content="Portfolio Template for Developer" />
+// Hamburger Menu Toggle
+const hamMenuBtn = document.querySelector('.header__main-ham-menu-cont');
+const smallMenu = document.querySelector('.header__sm-menu');
+const headerHamMenuBtn = document.querySelector('.header__main-ham-menu');
+const headerHamMenuCloseBtn = document.querySelector('.header__main-ham-menu-close');
+const headerSmallMenuLinks = document.querySelectorAll('.header__sm-menu-link');
 
-    <link rel="stylesheet" href="css/style.css" />
+hamMenuBtn.addEventListener('click', () => {
+  if (smallMenu.classList.contains('header__sm-menu--active')) {
+    smallMenu.classList.remove('header__sm-menu--active');
+  } else {
+    smallMenu.classList.add('header__sm-menu--active');
+  }
+  if (headerHamMenuBtn.classList.contains('d-none')) {
+    headerHamMenuBtn.classList.remove('d-none');
+    headerHamMenuCloseBtn.classList.add('d-none');
+  } else {
+    headerHamMenuBtn.classList.add('d-none');
+    headerHamMenuCloseBtn.classList.remove('d-none');
+  }
+});
 
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700;900&display=swap"
-      rel="stylesheet"
-    />
-  </head>
-  <body>
-    <header class="header">
-      <div class="header__content">
-        <div class="header__logo-container">
-          <div class="header__logo-img-cont">
-            <img
-              src="./assets/jpeg/Machining.jpeg"
-              alt="Ram Maheshwari Logo Image"
-              class="header__logo-img"
-            />
-          </div>
-          <span class="header__logo-sub">Jacob Rosales</span>
-        </div>
-        <div class="header__main">
-          <ul class="header__links">
-            <li class="header__link-wrapper">
-              <a href="./index.html" class="header__link"> Home </a>
-            </li>
-            <li class="header__link-wrapper">
-              <a href="./index.html#about" class="header__link">About </a>
-            </li>
-            <li class="header__link-wrapper">
-              <a href="./index.html#projects" class="header__link">
-                Projects
-              </a>
-            </li>
-            <li class="header__link-wrapper">
-              <a href="./index.html#contact" class="header__link"> Contact </a>
-            </li>
-          </ul>
-          <div class="header__main-ham-menu-cont">
-            <img
-              src="./assets/svg/ham-menu.svg"
-              alt="hamburger menu"
-              class="header__main-ham-menu"
-            />
-            <img
-              src="./assets/svg/ham-menu-close.svg"
-              alt="hamburger menu close"
-              class="header__main-ham-menu-close d-none"
-            />
-          </div>
-        </div>
-      </div>
-      <div class="header__sm-menu">
-        <div class="header__sm-menu-content">
-          <ul class="header__sm-menu-links">
-            <li class="header__sm-menu-link">
-              <a href="./index.html"> Home </a>
-            </li>
-            <li class="header__sm-menu-link">
-              <a href="./index.html#about"> About </a>
-            </li>
-            <li class="header__sm-menu-link">
-              <a href="./index.html#projects"> Projects </a>
-            </li>
-            <li class="header__sm-menu-link">
-              <a href="./index.html#contact"> Contact </a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </header>
-    <section class="home-hero">
-      <div class="home-hero__content">
-        <h1 class="heading-primary">Jacob Rosales</h1>
-        <div class="home-hero__info">
-          <p class="text-primary">
-            Hey, I am a Mechanical Engineering junior at San Jose State University with a passion for robotics, automation, and precision manufacturing. 
-            I thrive in hands-on learning environments, applying engineering principles to design, build, and optimizing mechanical systems. My experience includes CAD modeling, 
-            machining, and prototyping, with a strong interest in automotive, robotics, and photonics.
-          </p>
-        </div>
-        <div class="home-hero__cta">
-          <a href="./#projects" class="btn btn--bg">Projects</a>
-        </div>
-      </div>
-      <div class="home-hero__socials">
-        <div class="home-hero__social">
-    
-          </a>
-        </div>
-        <div class="home-hero__social">
-          <a href="#" class="home-hero__social-icon-link">
-            <img
-              src="./assets/png/github-ico.png"
-              alt="icon"
-              class="home-hero__social-icon"
-            />
-          </a>
-        </div>
-        <div class="home-hero__social">
-          <a href="#" class="home-hero__social-icon-link">
-            <img
-              src="./assets/png/twitter-ico.png"
-              alt="icon"
-              class="home-hero__social-icon"
-            />
-          </a>
-        </div>
-        <div class="home-hero__social">
-          <a href="#" class="home-hero__social-icon-link">
-            <img
-              src="./assets/png/yt-ico.png"
-              alt="icon"
-              class="home-hero__social-icon"
-            />
-          </a>
-        </div>
-        <div class="home-hero__social">
-          <a
-            href="#"
-            class="home-hero__social-icon-link home-hero__social-icon-link--bd-none"
-          >
-            <img
-              src="./assets/png/insta-ico.png"
-              alt="icon"
-              class="home-hero__social-icon"
-            />
-          </a>
-        </div>
-      </div>
-      <div class="home-hero__mouse-scroll-cont">
-        <div class="mouse"></div>
-      </div>
-      <!-- Place your GIF (e.g., background-animation.gif) in assets/gif/ -->
-    </section>
-    <section id="about" class="about sec-pad">
-      <div class="main-container">
-        <h2 class="heading heading-sec heading-sec__mb-med">
-          <span class="heading-sec__main">About Me</span>
-          <span class="heading-sec__sub">
-            Aspiring Mechanical Engineer pushing boundaries and exploring new limits.
-          </span>
-        </h2>
-        <div class="about__content">
-          <div class="about__content-main">
-            <h3 class="about__content-title">Get to know me!</h3>
-            <div class="about__content-details">
-              <p class="about__content-details-para">
-                Hey! It's
-                <strong>Jacob Rosales</strong>
-                and I'm a <strong> Mechanical Engineer </strong> located in
-                San Jose I've completed
-                 many
-                projects for school working in teams to enhance my skills in teamwork, critical thinking, 
-                along with experience creating labs to demo real world applications.
-              </p>
-              <p class="about__content-details-para">
-                I'm a motivated student looking for opportunities to gain hands on experience in the engineering field working on cutting edge technology.
-                
-              </p>
-            </div>
-            
-              </a
-            >
-          </div>
-          <div class="about__content-skills">
-            <h3 class="about__content-title">My Skills</h3>
-            <div class="skills">
-              <div class="skills__skill">C++</div>
-              <div class="skills__skill">JavaScript</div>
-              <div class="skills__skill">SolidWorks</div>
-              <div class="skills__skill">Ansys</div>
-              <div class="skills__skill">Microsoft Office</div>
-              <div class="skills__skill">Dynamics</div>
-              <div class="skills__skill">Design & Manufacturing</div>
-              <div class="skills__skill">Machining</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <section id="projects" class="projects sec-pad">
-      <div class="main-container">
-        <h2 class="heading heading-sec heading-sec__mb-bg">
-          <span class="heading-sec__main">Projects</span>
-          <span class="heading-sec__sub">
-            Here is a showcase of some Projects and Coursework I have been apart of 
-            while at San Jose State University.
-          </span>
-        </h2>
+for (let i = 0; i < headerSmallMenuLinks.length; i++) {
+  headerSmallMenuLinks[i].addEventListener('click', () => {
+    smallMenu.classList.remove('header__sm-menu--active');
+    headerHamMenuBtn.classList.remove('d-none');
+    headerHamMenuCloseBtn.classList.add('d-none');
+  });
+}
 
-        <div class="projects__content">
-          <div class="projects__row">
-            <div class="projects__row-img-cont">
-              <img
-                src="./assets/png/Project1Cover.png"
-                alt="Software Screenshot"
-                class="projects__row-img"
-                loading="lazy"
-              />
-            </div>
-            <div class="projects__row-content">
-              <h3 class="projects__row-content-title">Obstruction Clearing Robot</h3>
-              <p class="projects__row-content-desc">
-                Autonomous Robot With Obstacle clearance with the use of
-                linear accuators and ultrasonic sensors powered through our Raspberry Pi board.
-              </p>
-              <a
-                href="./project-1.html"
-                class="btn btn--med btn--theme dynamicBgClr"
-                target="_blank"
-                >Case Study</a
-              >
-            </div>
-          </div>
-          <div class="projects__row">
-            <div class="projects__row-img-cont">
-              <img
-                src="./assets/jpeg/project-mockup-exampleR1.jpeg"
-                alt="Software Screenshot"
-                class="projects__row-img"
-                loading="lazy"
-              />
-            </div>
-            <div class="projects__row-content">
-              <h3 class="projects__row-content-title">Assistive Automonous Robot</h3>
-              <p class="projects__row-content-desc">
-                The objective was to design and construct an autonomous robot that replicates a real-world application:
-                an assistive robot in Germany that enters a kitchen, turns off a stove, finds a plate, and returns it to an elderly person.
-              </p>
-              <a
-                href="./project-2.html"
-                class="btn btn--med btn--theme dynamicBgClr"
-                target="_blank"
-                >Case Study</a
-              >
-            </div>
-          </div>
-          <div class="projects__row">
-            <div class="projects__row-img-cont">
-              <img
-                src="./assets/png/Project3Cover.png"
-                alt="Software Screenshot"
-                class="projects__row-img"
-                loading="lazy"
-              />
-            </div>
-            <div class="projects__row-content">
-              <h3 class="projects__row-content-title">Wind Turbine</h3>
-              <p class="projects__row-content-desc">
-                Designed and constructed a turbine structure and blades that could generate a minimum power output of 2 watts while adhering to specific constraints
-              </p>
-              <a
-                href="./project-3.html"
-                class="btn btn--med btn--theme dynamicBgClr"
-                target="_blank"
-                >Case Study</a
-              >
-            </div>
-          </div>
-          <div class="projects__row">
-            <div class="projects__row-img-cont">
-              <img src="./assets/png/Project4Cover.png" alt="Precision Aluminum Backplate Screenshot" class="projects__row-img" loading="lazy" />
-            </div>
-            <div class="projects__row-content">
-              <h3 class="projects__row-content-title">Precision Aluminum Backplate</h3>
-              <p class="projects__row-content-desc">
-                Designed and machined a precision aluminum backplate for a mechanical assembly using SolidWorks and advanced machining techniques.
-              </p>
-              <a
-                href="./project-4.html" 
-                class="btn btn--med btn--theme dynamicBgClr"
-                target="_blank">Case Study</a
-              >
-            </div>
-          </div>
-          <div class="projects__row">
-            <div class="projects__row-img-cont">
-              <img src="./assets/png/Project5Cover.png" alt="CAD Designs Gallery Screenshot" class="projects__row-img" loading="lazy" />
-            </div>
-            <div class="projects__row-content">
-              <h3 class="projects__row-content-title">CAD Design Gallery</h3>
-              <p class="projects__row-content-desc">
-                A gallery showcasing various CAD designs embedded with Autodesk Viewer for interactive viewing.
-              </p>
-              <a 
-                href="./project-5.html" 
-                class="btn btn--med btn--theme dynamicBgClr" 
-                target="_blank">Case Study</a
-              >
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <section id="contact" class="contact sec-pad dynamicBg">
-      <div class="main-container">
-        <h2 class="heading heading-sec heading-sec__mb-med">
-          <span class="heading-sec__main heading-sec__main--lt">Contact</span>
-          <span class="heading-sec__sub heading-sec__sub--lt">
-            Lets connect and explore the possibilites!
-          </span>
-        </h2>
-        <div class="contact__form-container">
-          <form action="#" class="contact__form">
-            <div class="contact__form-field">
-              <label class="contact__form-label" for="name">Name</label>
-              <input
-                required
-                placeholder="Enter Your Name"
-                type="text"
-                class="contact__form-input"
-                name="name"
-                id="name"
-              />
-            </div>
-            <div class="contact__form-field">
-              <label class="contact__form-label" for="email">Email</label>
-              <input
-                required
-                placeholder="Enter Your Email"
-                type="text"
-                class="contact__form-input"
-                name="email"
-                id="email"
-              />
-            </div>
-            <div class="contact__form-field">
-              <label class="contact__form-label" for="message">Message</label>
-              <textarea
-                required
-                cols="30"
-                rows="10"
-                class="contact__form-input"
-                placeholder="Enter Your Message"
-                name="message"
-                id="message"
-              ></textarea>
-            </div>
-            <button type="submit" class="btn btn--theme contact__btn">
-              Submit
-            </button>
-          </form>
-        </div>
-      </div>
-    </section>
-    <footer class="main-footer">
-      <div class="main-container">
-        <div class="main-footer__upper">
-          <div class="main-footer__row main-footer__row-1">
-            <h2 class="heading heading-sm main-footer__heading-sm">
-              <span>Social</span>
-            </h2>
-            <div class="main-footer__social-cont">
-              <a target="_blank" rel="noreferrer" href="#">
-                <img
-                  class="main-footer__icon"
-                  src="./assets/png/linkedin-ico.png"
-                  alt="icon"
-                />
-              </a>
+// Logo Click Navigation
+const headerLogoContainer = document.querySelector('.header__logo-container');
 
-              <a target="_blank" rel="noreferrer" href="#">
-                <img
-                  class="main-footer__icon"
-                  src="./assets/png/yt-ico.png"
-                  alt="icon"
-                />
-              </a>
-              <a target="_blank" rel="noreferrer" href="#">
-                <img
-                  class="main-footer__icon main-footer__icon--mr-none"
-                  src="./assets/png/insta-ico.png"
-                  alt="icon"
-                />
-              </a>
-            </div>
-          </div>
-          <div class="main-footer__row main-footer__row-2">
-            <h4 class="heading heading-sm text-lt">Jacob Rosales</h4>
-            <p class="main-footer__short-desc">
-              While I may be early in my professional journey, I bring a strong work ethic and a proven ability to learn quickly, ensuring I deliver results efficiently and effectively.
-            </p>
-          </div>
-        </div>
+headerLogoContainer.addEventListener('click', () => {
+  location.href = 'index.html';
+});
 
-        <div class="main-footer__lower">
-          &copy; Copyright 2025. Made by
-          <a rel="noreferrer" target="_blank" href=""
-            >Jacob Rosales</a
-          >
-        </div>
-      </div>
-    </footer>
+// Carousel Functionality
+document.addEventListener('DOMContentLoaded', () => {
+  const galleries = document.querySelectorAll('.gallery-container');
 
-    <script src="./index.js"></script>
-    <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'91bef9a97dd6afb4',t:'MTc0MTIzMzkzMS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script>
-  </body>
-</html>
+  galleries.forEach((galleryContainer) => {
+    const gallery = galleryContainer.querySelector('.gallery');
+    const scrollLeftBtn = galleryContainer.previousElementSibling; // .scroll-left
+    const scrollRightBtn = galleryContainer.nextElementSibling; // .scroll-right
+    const scrollAmount = 350; // Matches image width for smooth scrolling
+
+    // Scroll left
+    scrollLeftBtn.addEventListener('click', () => {
+      galleryContainer.scrollBy({
+        left: -scrollAmount,
+        behavior: 'smooth',
+      });
+    });
+
+    // Scroll right
+    scrollRightBtn.addEventListener('click', () => {
+      galleryContainer.scrollBy({
+        left: scrollAmount,
+        behavior: 'smooth',
+      });
+    });
+  });
+});
